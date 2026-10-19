@@ -1,0 +1,18 @@
+*
+!.gitignore
+!README.md
+
+# Build output
+/build/
+/cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+compile_commands.json
+
+# Generated documentation and coverage output
+/doxy/
+/gcovr/
+
+# Generated archive
+/gcovr_BR.zip

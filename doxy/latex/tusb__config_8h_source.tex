@@ -1,0 +1,149 @@
+\doxysection{tusb\+\_\+config.\+h}
+\hypertarget{tusb__config_8h_source}{}\label{tusb__config_8h_source}\index{C:/Users/ben/Dev/ZHAW/SoftwEng/TSM\_PicoW\_Blinky/src/tusb\_config.h@{C:/Users/ben/Dev/ZHAW/SoftwEng/TSM\_PicoW\_Blinky/src/tusb\_config.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ "{}platform.h"{}}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ The\ MIT\ License\ (MIT)}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Ha\ Thach\ (tinyusb.org)}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ Permission\ is\ hereby\ granted,\ free\ of\ charge,\ to\ any\ person\ obtaining\ a\ copy}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ of\ this\ software\ and\ associated\ documentation\ files\ (the\ "{}Software"{}),\ to\ deal}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ in\ the\ Software\ without\ restriction,\ including\ without\ limitation\ the\ rights}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ to\ use,\ copy,\ modify,\ merge,\ publish,\ distribute,\ sublicense,\ and/or\ sell}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ copies\ of\ the\ Software,\ and\ to\ permit\ persons\ to\ whom\ the\ Software\ is}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ furnished\ to\ do\ so,\ subject\ to\ the\ following\ conditions:}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ The\ above\ copyright\ notice\ and\ this\ permission\ notice\ shall\ be\ included\ in}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ all\ copies\ or\ substantial\ portions\ of\ the\ Software.}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ THE\ SOFTWARE\ IS\ PROVIDED\ "{}AS\ IS"{},\ WITHOUT\ WARRANTY\ OF\ ANY\ KIND,\ EXPRESS\ OR}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ IMPLIED,\ INCLUDING\ BUT\ NOT\ LIMITED\ TO\ THE\ WARRANTIES\ OF\ MERCHANTABILITY,}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ AND\ NONINFRINGEMENT.\ IN\ NO\ EVENT\ SHALL\ THE}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ AUTHORS\ OR\ COPYRIGHT\ HOLDERS\ BE\ LIABLE\ FOR\ ANY\ CLAIM,\ DAMAGES\ OR\ OTHER}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ LIABILITY,\ WHETHER\ IN\ AN\ ACTION\ OF\ CONTRACT,\ TORT\ OR\ OTHERWISE,\ ARISING\ FROM,}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ OUT\ OF\ OR\ IN\ CONNECTION\ WITH\ THE\ SOFTWARE\ OR\ THE\ USE\ OR\ OTHER\ DEALINGS\ IN}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ THE\ SOFTWARE.}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#ifndef\ \_TUSB\_CONFIG\_H\_}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ \_TUSB\_CONFIG\_H\_}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00031\ \ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#if\ 1}}
+\DoxyCodeLine{00035\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+}}
+\DoxyCodeLine{00036\ \textcolor{comment}{//\ Board\ Specific\ Configuration}}
+\DoxyCodeLine{00037\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{comment}{//\ \#if\ CFG\_TUSB\_MCU\ ==\ OPT\_MCU\_RP2040}}
+\DoxyCodeLine{00040\ \textcolor{comment}{//\ //\ change\ to\ 1\ if\ using\ pico-\/pio-\/usb\ as\ host\ controller\ for\ raspberry\ rp2040}}
+\DoxyCodeLine{00041\ \textcolor{comment}{//\ \#define\ CFG\_TUH\_RPI\_PIO\_USB\ \ \ 0}}
+\DoxyCodeLine{00042\ \textcolor{comment}{//\ \#define\ BOARD\_TUH\_RHPORT\ \ \ \ \ \ CFG\_TUH\_RPI\_PIO\_USB}}
+\DoxyCodeLine{00043\ \textcolor{comment}{//\ \#endif}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{comment}{//\ RHPort\ number\ used\ for\ host\ can\ be\ defined\ by\ board.mk,\ default\ to\ port\ 0}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#ifndef\ BOARD\_TUH\_RHPORT}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ BOARD\_TUH\_RHPORT\ \ \ \ \ \ 0}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{comment}{//\ RHPort\ max\ operational\ speed\ can\ defined\ by\ board.mk}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#ifndef\ BOARD\_TUH\_MAX\_SPEED}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ BOARD\_TUH\_MAX\_SPEED\ \ \ OPT\_MODE\_DEFAULT\_SPEED}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00058\ \textcolor{comment}{//\ COMMON\ CONFIGURATION}}
+\DoxyCodeLine{00059\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#define\ CFG\_TUSB\_OS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*OPT\_OS\_FREERTOS*/}\textcolor{preprocessor}{\ OPT\_OS\_PICO\ }}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{comment}{//\ Enable\ device\ stack}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#define\ CFG\_TUD\_ENABLED\ \ \ \ \ 1}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{comment}{//\ Enable\ host\ stack\ with\ pio-\/usb\ if\ Pico-\/PIO-\/USB\ library\ is\ available}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#define\ CFG\_TUH\_ENABLED\ \ \ \ \ 0}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#define\ CFG\_TUH\_RPI\_PIO\_USB\ 1}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{comment}{//\ CFG\_TUSB\_DEBUG\ is\ defined\ by\ compiler\ in\ DEBUG\ build}}
+\DoxyCodeLine{00071\ \textcolor{comment}{//\ \#define\ CFG\_TUSB\_DEBUG\ \ \ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{comment}{/*\ USB\ DMA\ on\ some\ MCUs\ can\ only\ access\ a\ specific\ SRAM\ region\ with\ restriction\ on\ alignment.}}
+\DoxyCodeLine{00074\ \textcolor{comment}{\ *\ Tinyusb\ use\ follows\ macros\ to\ declare\ transferring\ memory\ so\ that\ they\ can\ be\ put}}
+\DoxyCodeLine{00075\ \textcolor{comment}{\ *\ into\ those\ specific\ section.}}
+\DoxyCodeLine{00076\ \textcolor{comment}{\ *\ e.g}}
+\DoxyCodeLine{00077\ \textcolor{comment}{\ *\ -\/\ CFG\_TUSB\_MEM\ SECTION\ :\ \_\_attribute\_\_\ ((\ section("{}.usb\_ram"{})\ ))}}
+\DoxyCodeLine{00078\ \textcolor{comment}{\ *\ -\/\ CFG\_TUSB\_MEM\_ALIGN\ \ \ :\ \_\_attribute\_\_\ ((aligned(4)))}}
+\DoxyCodeLine{00079\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#ifndef\ CFG\_TUSB\_MEM\_SECTION}}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#define\ CFG\_TUSB\_MEM\_SECTION}}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#ifndef\ CFG\_TUSB\_MEM\_ALIGN}}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#define\ CFG\_TUSB\_MEM\_ALIGN\ \ \ \ \ \ \ \ \ \ \_\_attribute\_\_\ ((aligned(4)))}}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00089\ \textcolor{comment}{//\ DEVICE\ CONFIGURATION}}
+\DoxyCodeLine{00090\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#ifndef\ CFG\_TUD\_ENDPOINT0\_SIZE}}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#define\ CFG\_TUD\_ENDPOINT0\_SIZE\ \ \ \ 64}}
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ CLASS\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\///}}
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#define\ CFG\_TUD\_CDC\ \ \ \ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \textcolor{comment}{//\ CDC\ FIFO\ size\ of\ TX\ and\ RX}}
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#define\ CFG\_TUD\_CDC\_RX\_BUFSIZE\ \ \ (4*256)}}
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#define\ CFG\_TUD\_CDC\_TX\_BUFSIZE\ \ \ (4*256)\ }\textcolor{comment}{/*\ \ increased\ size\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \textcolor{comment}{//\ CDC\ Endpoint\ transfer\ buffer\ size,\ more\ is\ faster}}
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#define\ CFG\_TUD\_CDC\_EP\_BUFSIZE\ \ \ (16*64)}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00107\ \textcolor{comment}{//\ HOST\ CONFIGURATION}}
+\DoxyCodeLine{00108\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \textcolor{comment}{//\ Size\ of\ buffer\ to\ hold\ descriptors\ and\ other\ data\ used\ for\ enumeration}}
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#define\ CFG\_TUH\_ENUMERATION\_BUFSIZE\ 256}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#define\ CFG\_TUH\_HUB\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1\ }\textcolor{comment}{/*\ number\ of\ supported\ hubs\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#define\ CFG\_TUH\_MSC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ }\textcolor{comment}{/*\ nof\ mass\ storage\ class\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\#define\ CFG\_TUH\_VENDOR\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \textcolor{comment}{//\ max\ device\ support\ (excluding\ hub\ device)}}
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\#define\ CFG\_TUH\_DEVICE\_MAX\ \ \ \ \ \ \ \ \ \ (CFG\_TUH\_HUB\ ?\ 4\ :\ 1)\ }\textcolor{comment}{//\ hub\ typically\ has\ 4\ ports}}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ HID\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\///}}
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\#if\ PL\_CONFIG\_USE\_USB\_HOST\_HID}}
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\ \ \ \ \#define\ CFG\_TUH\_HID\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 4\ }\textcolor{comment}{//\ typical\ keyboard\ +\ mouse\ device\ can\ have\ 3-\/4\ HID\ interfaces}}
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\ \ \ \ \#define\ CFG\_TUH\_HID\_EPIN\_BUFSIZE\ \ \ \ 64}}
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\ \ \ \ \#define\ CFG\_TUH\_HID\_EPOUT\_BUFSIZE\ \ \ 64}}
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ CDC\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\///}}
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\#if\ PL\_CONFIG\_USE\_USB\_HOST\_CDC}}
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\ \ \#define\ CFG\_TUH\_CDC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1\ }\textcolor{comment}{/*\ nof\ communication\ device\ class\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{comment}{//\ Set\ Line\ Control\ state\ on\ enumeration/mounted:}}
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{comment}{//\ DTR\ (\ bit\ 0),\ RTS\ (bit\ 1)}}
+\DoxyCodeLine{00132\ \textcolor{preprocessor}{\ \ \ \ \#define\ CFG\_TUH\_CDC\_LINE\_CONTROL\_ON\_ENUM\ \ \ \ 0x03}}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{comment}{//\ Set\ Line\ Coding\ on\ enumeration/mounted,\ value\ for\ cdc\_line\_coding\_t}}
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{comment}{//\ bit\ rate\ =\ 115200,\ 1\ stop\ bit,\ no\ parity,\ 8\ bit\ data\ width}}
+\DoxyCodeLine{00136\ \textcolor{preprocessor}{\ \ \ \ \#define\ CFG\_TUH\_CDC\_LINE\_CODING\_ON\_ENUM\ \ \ \{\ 115200,\ CDC\_LINE\_CONDING\_STOP\_BITS\_1,\ CDC\_LINE\_CODING\_PARITY\_NONE,\ 8\ \}}}
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00140\ \ \}}
+\DoxyCodeLine{00141\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_TUSB\_CONFIG\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

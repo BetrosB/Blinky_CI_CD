@@ -1,0 +1,14 @@
+/build/
+/Testing/
+/penv/
+*.log
+
+# Build output
+/cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+compile_commands.json
+
+# Generated archive
+/gcovr_BR.zip

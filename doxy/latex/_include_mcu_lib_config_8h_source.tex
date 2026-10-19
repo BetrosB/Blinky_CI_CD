@@ -1,0 +1,92 @@
+\doxysection{Include\+Mcu\+Lib\+Config.\+h}
+\hypertarget{_include_mcu_lib_config_8h_source}{}\label{_include_mcu_lib_config_8h_source}\index{C:/Users/ben/Dev/ZHAW/SoftwEng/TSM\_PicoW\_Blinky/src/IncludeMcuLibConfig.h@{C:/Users/ben/Dev/ZHAW/SoftwEng/TSM\_PicoW\_Blinky/src/IncludeMcuLibConfig.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2023-\/2024,\ Erich\ Styger}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ SPDX-\/License-\/Identifier:\ BSD-\/3-\/Clause}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{comment}{/*\ header\ file\ is\ included\ with\ -\/include\ compiler\ option\ */}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ MCULIB\_CONFIG\_CONFIG\_H\_}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ MCULIB\_CONFIG\_CONFIG\_H\_}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00013\ \textcolor{comment}{/*\ SDK\ */}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ McuLib\_CONFIG\_CPU\_IS\_KINETIS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0)}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ McuLib\_CONFIG\_CORTEX\_M\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0)\ }\textcolor{comment}{/*\ RP2040\ is\ a\ Cortex-\/M0+\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ McuLib\_CONFIG\_CPU\_IS\_RPxxxx\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1)}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ McuLib\_CONFIG\_CPU\_VARIANT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ McuLib\_CONFIG\_CPU\_VARIANT\_RP2040}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ McuLib\_CONFIG\_SDK\_VERSION\_USED\ \ \ \ \ \ \ \ \ \ \ \ \ \ McuLib\_CONFIG\_SDK\_RPI\_PICO}}
+\DoxyCodeLine{00019\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00020\ \textcolor{comment}{/*\ FreeRTOS\ */}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ McuLib\_CONFIG\_SDK\_USE\_FREERTOS\ \ \ \ \ \ \ \ \ \ \ \ \ \ (1)}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ configMINIMAL\_STACK\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (500/sizeof(StackType\_t))}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ configTOTAL\_HEAP\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (50*1024)}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ configUSE\_SEGGER\_SYSTEM\_VIEWER\_HOOKS\ \ \ \ \ \ \ \ (0)}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ INCLUDE\_vTaskEndScheduler\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1)}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ configUSE\_IDLE\_HOOK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0)}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ configUSE\_TICK\_HOOK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0)}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ configUSE\_MALLOC\_FAILED\_HOOK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0)}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ configCHECK\_FOR\_STACK\_OVERFLOW\ \ \ \ \ \ \ \ \ \ \ \ \ \ (0)}}
+\DoxyCodeLine{00030\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00031\ \textcolor{comment}{/*\ RTT\ */}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ McuRTT\_CONFIG\_RTT\_BUFFER\_SIZE\_DOWN\ \ \ \ \ \ \ \ \ \ \ \ (128)}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ McuRTT\_CONFIG\_BLOCKING\_SEND\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1)\ }\textcolor{comment}{/*\ 0:\ do\ not\ block\ if\ buffer\ full\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ McuRTT\_CONFIG\_BLOCKING\_SEND\_TIMEOUT\_MS\ \ \ \ \ \ \ \ (5)}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ McuRTT\_CONFIG\_BLOCKING\_SEND\_WAIT\_MS\ \ \ \ \ \ \ \ \ \ \ (1)}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ McuRTT\_CONFIG\_RTT\_BUFFER\_SIZE\_UP\ \ \ \ \ \ \ \ \ \ \ \ \ \ (1024)}}
+\DoxyCodeLine{00037\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00038\ \textcolor{comment}{/*\ McuShell\ */}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ McuShell\_CONFIG\_PROJECT\_NAME\_STRING\ \ \ \ \ \ \ \ \ "{}Sample"{}}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ McuShell\_CONFIG\_PROMPT\_STRING\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}\$>\ "{}}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ McuShell\_CONFIG\_MULTI\_CMD\_ENABLED\ \ \ \ \ \ \ \ \ \ \ (1)}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ McuShell\_CONFIG\_MULTI\_CMD\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ \ (96)}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ McuShell\_CONFIG\_DEFAULT\_SHELL\_BUFFER\_SIZE\ \ \ (128)}}
+\DoxyCodeLine{00044\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00045\ \textcolor{comment}{/*\ Unity\ */}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#if\ ENABLE\_UNIT\_TESTS}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\ \ \ \ \#if\ !\_\_ASSEMBLER\_\_\ }\textcolor{comment}{/*\ set\ if\ file\ is\ included\ by\ GNU\ as\ (assembler).\ Do\ not\ include\ normal\ C\ header\ files\ if\ running\ the\ assembler\ for\ example\ to\ assemble\ the\ pico\ startup\ code\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\ \ \ \ \#include\ "{}McuUnity.h"{}}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\ \ \ \ \#define\ UNITY\_OUTPUT\_CHAR(a)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ McuUnity\_putc(a)}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\ \ \ \ \#define\ UNITY\_OUTPUT\_FLUSH()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ McuUnity\_flush()}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\ \ \ \ \#define\ UNITY\_OUTPUT\_START()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ McuUnity\_start()}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\ \ \ \ \#define\ UNITY\_OUTPUT\_COMPLETE()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ McuUnity\_complete()}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\ \ \ \ \#define\ UNITY\_OUTPUT\_COLOR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ use\ colored\ output\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00056\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00057\ \textcolor{comment}{/*\ McuSemihost\ */}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#define\ McuSemihost\_CONFIG\_IS\_ENABLED\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1)}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#define\ McuSemihost\_CONFIG\_DEBUG\_CONNECTION\ \ \ \ \ \ \ \ \ McuSemihost\_DEBUG\_CONNECTION\_SEGGER}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#define\ McuSemihost\_CONFIG\_LOG\_ENABLED\ \ \ \ \ \ \ \ \ \ \ \ \ \ (0)}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#define\ McuSemihost\_CONFIG\_CUT\_FILENAME\_PREFIX\ \ \ \ \ \ (1)}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#define\ McuSemihost\_CONFIG\_CUT\_FILENAME\_PREFIX\_STR\ \ "{}/workspace/"{}\ }\textcolor{comment}{/*\ DevContainer\ path\ for\ workspace.\ GDB\ server\ (on\ the\ host)\ needs\ to\ have\ cwd\ in\ the\ project\ root!\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00063\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00064\ \textcolor{comment}{/*\ McuRdimon\ */}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#define\ McuRdimon\_CONFIG\_IS\_ENABLED\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1)\ \ \ \ \ \ \ }\textcolor{comment}{/*\ 1:\ RdiMon\ is\ enabled;\ 0:\ RdiMon\ is\ disabled*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00066\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00067\ \textcolor{comment}{/*\ McuCoverage\ */}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#define\ McuCoverage\_CONFIG\_IS\_ENABLED\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1)}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#define\ McuCoverage\_CONFIG\_USE\_FREESTANDING\ \ \ \ \ \ \ \ \ (0\ \&\&\ McuCoverage\_CONFIG\_IS\_ENABLED)}}
+\DoxyCodeLine{00070\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00071\ \textcolor{comment}{/*\ McuLog\ */}}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#define\ McuLog\_CONFIG\_IS\_ENABLED\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1)}}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#define\ McuLog\_CONFIG\_USE\_FILE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0)}}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#define\ McuLog\_CONFIG\_USE\_RTT\_CONSOLE\ \ \ \ \ \ \ \ \ \ \ (1)}}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#define\ McuLog\_CONFIG\_NOF\_CONSOLE\_LOGGER\ \ \ \ \ \ \ \ (1)\ }\textcolor{comment}{/*\ RTT\ and\ USB\ CDC\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#define\ McuLog\_CONFIG\_USE\_COLOR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0)}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#define\ McuLog\_CONFIG\_LOG\_TIMESTAMP\_DATE\ \ \ \ \ \ \ \ (0)}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#define\ McuLog\_CONFIG\_LOG\_TIMESTAMP\_TIME\ \ \ \ \ \ \ \ (0)}}
+\DoxyCodeLine{00079\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00080\ \textcolor{comment}{/*\ McuShellCdcDevice\ with\ tinyUSB\ */}}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#define\ McuShellCdcDevice\_CONFIG\_IS\_ENABLED\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1)}}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#define\ McuShellCdcDevice\_CONFIG\_BLOCKING\_SEND\ \ \ \ \ \ \ \ \ \ \ \ \ \ (0)\ }\textcolor{comment}{/*\ 0:\ do\ not\ block\ if\ buffer\ full\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#define\ McuShellCdcDevice\_CONFIG\_BLOCKING\_SEND\_TIMEOUT\_MS\ \ \ (10)\ }\textcolor{comment}{/*\ maximum\ timout\ value\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#define\ McuShellCdcDevice\_CONFIG\_BLOCKING\_SEND\_WAIT\_MS\ \ \ \ \ \ (1)\ }\textcolor{comment}{/*\ waiting\ time\ in\ timeout\ loop\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ MCULIB\_CONFIG\_CONFIG\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

@@ -1,0 +1,58 @@
+\doxysection{leds\+\_\+config.\+h}
+\hypertarget{leds__config_8h_source}{}\label{leds__config_8h_source}\index{C:/Users/ben/Dev/ZHAW/SoftwEng/TSM\_PicoW\_Blinky/src/leds\_config.h@{C:/Users/ben/Dev/ZHAW/SoftwEng/TSM\_PicoW\_Blinky/src/leds\_config.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2023,\ Erich\ Styger}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ SPDX-\/License-\/Identifier:\ BSD-\/3-\/Clause}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ LEDS\_CONFIG\_H\_}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ LEDS\_CONFIG\_H\_}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}platform.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00013\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ LEDS\_CONFIG\_HAS\_ONBOARD\_LED\ \ \ \ \ \ \ \ (1)}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ LEDS\_CONFIG\_HAS\_RED\_LED\ \ \ \ \ \ \ \ \ \ \ \ (1)}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ LEDS\_CONFIG\_HAS\_GREEN\_LED\ \ \ \ \ \ \ \ \ \ (1)}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ LEDS\_CONFIG\_HAS\_BLUE\_LED\ \ \ \ \ \ \ \ \ \ \ (1)}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ LEDS\_CONFIG\_HAS\_ORANGE\_LED\ \ \ \ \ \ \ \ \ (0)}}
+\DoxyCodeLine{00021\ \textcolor{comment}{/*\ Green:\ GPIO18}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ \ *\ Blue:\ \ GPIO19}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ \ *\ Red:\ \ \ GPIO20\ */}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ LEDS\_CONFIG\_ENABLE\_CLOCK()\ \ \ \ }\textcolor{comment}{/*\ nothing\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#if\ LEDS\_CONFIG\_HAS\_RED\_LED}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\ \ \#define\ LEDS\_CONFIG\_RED\_PIN\ \ \ \ \ \ \ \ \ \ \ 20}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\ \ \#define\ LEDS\_CONFIG\_RED\_LOW\_ACTIVE\ \ \ \ false}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#if\ LEDS\_CONFIG\_HAS\_GREEN\_LED}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\ \ \#define\ LEDS\_CONFIG\_GREEN\_PIN\ \ \ \ \ \ \ \ \ 19}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\ \ \#define\ LEDS\_CONFIG\_GREEN\_LOW\_ACTIVE\ \ false}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#if\ LEDS\_CONFIG\_HAS\_BLUE\_LED}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\ \ \#define\ LEDS\_CONFIG\_BLUE\_PIN\ \ \ \ \ \ \ \ \ \ 18}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\ \ \#define\ LEDS\_CONFIG\_BLUE\_LOW\_ACTIVE\ \ \ false}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#if\ LEDS\_CONFIG\_HAS\_ONBOARD\_LED}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\ \ \#if\ !PL\_CONFIG\_USE\_PICO\_W}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\ \ \ \ \#define\ LEDS\_CONFIG\_ONBOARD\_PIN\ \ \ \ \ \ \ \ \ \ 25\ }\textcolor{comment}{/*\ only\ for\ non-\/W!\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\ \ \ \ \#define\ LEDS\_CONFIG\_ONBOARD\_LOW\_ACTIVE\ \ \ false}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\ \ \#endif}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00049\ \}\ \ \textcolor{comment}{/*\ extern\ "{}C"{}\ */}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ LEDS\_CONFIG\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

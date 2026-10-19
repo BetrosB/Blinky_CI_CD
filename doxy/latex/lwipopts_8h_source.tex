@@ -1,0 +1,159 @@
+\doxysection{lwipopts.\+h}
+\hypertarget{lwipopts_8h_source}{}\label{lwipopts_8h_source}\index{C:/Users/ben/Dev/ZHAW/SoftwEng/TSM\_PicoW\_Blinky/src/lwipopts.h@{C:/Users/ben/Dev/ZHAW/SoftwEng/TSM\_PicoW\_Blinky/src/lwipopts.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_LWIPOPTS\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_LWIPOPTS\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ Generally\ you\ would\ define\ your\ own\ explicit\ list\ of\ lwIP\ options}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ (see\ https://www.nongnu.org/lwip/2\_1\_x/group\_\_lwip\_\_opts.html)}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ NO\_SYS}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\ \ \#define\ NO\_SYS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ }\textcolor{comment}{/*\ with\ FreeRTOS\ (pico\_cyw43\_arch\_lwip\_sys\_freertos),\ this\ needs\ to\ be\ set\ to\ 0\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ allow\ override\ in\ some\ examples}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifndef\ LWIP\_SOCKET}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\ \ \#define\ LWIP\_SOCKET\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#if\ PICO\_CYW43\_ARCH\_POLL}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\ \ \#define\ MEM\_LIBC\_MALLOC\ \ \ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00018\ \ \ \textcolor{comment}{//\ MEM\_LIBC\_MALLOC\ is\ incompatible\ with\ non\ polling\ versions}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\ \ \#define\ MEM\_LIBC\_MALLOC\ \ \ \ \ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ MEM\_ALIGNMENT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 4}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ MEM\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 16000}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ MEMP\_NUM\_TCP\_SEG\ \ \ \ \ \ \ \ \ \ \ \ 32}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ MEMP\_NUM\_ARP\_QUEUE\ \ \ \ \ \ \ \ \ \ 10}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ PBUF\_POOL\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ \ (2*24)}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ LWIP\_ARP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ LWIP\_ETHERNET\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ LWIP\_ICMP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ LWIP\_RAW\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ TCP\_WND\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (8\ *\ TCP\_MSS)}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ TCP\_MSS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1460}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ TCP\_SND\_BUF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (8\ *\ TCP\_MSS)}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ TCP\_SND\_QUEUELEN\ \ \ \ \ \ \ \ \ \ \ \ ((4\ *\ (TCP\_SND\_BUF)\ +\ (TCP\_MSS\ -\/\ 1))\ /\ (TCP\_MSS))}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ LWIP\_NETIF\_STATUS\_CALLBACK\ \ 1}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ LWIP\_NETIF\_LINK\_CALLBACK\ \ \ \ 1}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ LWIP\_NETIF\_HOSTNAME\ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ LWIP\_NETCONN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ MEM\_STATS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ SYS\_STATS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ MEMP\_STATS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ LINK\_STATS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00042\ \textcolor{comment}{//\ \#define\ ETH\_PAD\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 2}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ LWIP\_CHKSUM\_ALGORITHM\ \ \ \ \ \ \ 3}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ LWIP\_DHCP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ LWIP\_IPV4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ LWIP\_TCP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ LWIP\_UDP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ LWIP\_DNS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ LWIP\_TCP\_KEEPALIVE\ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ LWIP\_NETIF\_TX\_SINGLE\_PBUF\ \ \ 1}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ DHCP\_DOES\_ARP\_CHECK\ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ LWIP\_DHCP\_DOES\_ACD\_CHECK\ \ \ \ 0}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#ifndef\ NDEBUG}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\ \ \#define\ LWIP\_DEBUG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\ \ \#define\ LWIP\_STATS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\ \ \#define\ LWIP\_STATS\_DISPLAY\ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#define\ ETHARP\_DEBUG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LWIP\_DBG\_OFF}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#define\ NETIF\_DEBUG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LWIP\_DBG\_OFF}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#define\ PBUF\_DEBUG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LWIP\_DBG\_OFF}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#define\ API\_LIB\_DEBUG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LWIP\_DBG\_OFF}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#define\ API\_MSG\_DEBUG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LWIP\_DBG\_OFF}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#define\ SOCKETS\_DEBUG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LWIP\_DBG\_OFF}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#define\ ICMP\_DEBUG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LWIP\_DBG\_OFF}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#define\ INET\_DEBUG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LWIP\_DBG\_OFF}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#define\ IP\_DEBUG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LWIP\_DBG\_OFF}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#define\ IP\_REASS\_DEBUG\ \ \ \ \ \ \ \ \ \ \ \ \ \ LWIP\_DBG\_OFF}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#define\ RAW\_DEBUG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LWIP\_DBG\_OFF}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#define\ MEM\_DEBUG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LWIP\_DBG\_OFF}}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#define\ MEMP\_DEBUG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LWIP\_DBG\_OFF}}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#define\ SYS\_DEBUG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LWIP\_DBG\_OFF}}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#define\ TCP\_DEBUG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LWIP\_DBG\_OFF}}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#define\ TCP\_INPUT\_DEBUG\ \ \ \ \ \ \ \ \ \ \ \ \ LWIP\_DBG\_OFF}}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#define\ TCP\_OUTPUT\_DEBUG\ \ \ \ \ \ \ \ \ \ \ \ LWIP\_DBG\_OFF}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#define\ TCP\_RTO\_DEBUG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LWIP\_DBG\_OFF}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#define\ TCP\_CWND\_DEBUG\ \ \ \ \ \ \ \ \ \ \ \ \ \ LWIP\_DBG\_OFF}}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#define\ TCP\_WND\_DEBUG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LWIP\_DBG\_OFF}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#define\ TCP\_FR\_DEBUG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LWIP\_DBG\_OFF}}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#define\ TCP\_QLEN\_DEBUG\ \ \ \ \ \ \ \ \ \ \ \ \ \ LWIP\_DBG\_OFF}}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#define\ TCP\_RST\_DEBUG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LWIP\_DBG\_OFF}}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#define\ UDP\_DEBUG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LWIP\_DBG\_OFF}}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#define\ TCPIP\_DEBUG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LWIP\_DBG\_OFF}}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#define\ PPP\_DEBUG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LWIP\_DBG\_OFF}}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#define\ SLIP\_DEBUG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LWIP\_DBG\_OFF}}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#define\ DHCP\_DEBUG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LWIP\_DBG\_OFF}}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#if\ !NO\_SYS}}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\ \ \#define\ TCPIP\_THREAD\_STACKSIZE\ \ \ \ \ \ 1024}}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\ \ \#define\ TCPIP\_THREAD\_PRIO\ \ \ \ \ \ \ \ \ \ \ 3}}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\ \ \#define\ DEFAULT\_THREAD\_STACKSIZE\ \ \ \ 1024}}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\ \ \#define\ DEFAULT\_RAW\_RECVMBOX\_SIZE\ \ \ 8}}
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\ \ \#define\ TCPIP\_MBOX\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ 8}}
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\ \ \#define\ LWIP\_TIMEVAL\_PRIVATE\ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \textcolor{comment}{//\ not\ necessary,\ can\ be\ done\ either\ way}}
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\ \ \#define\ LWIP\_TCPIP\_CORE\_LOCKING\_INPUT\ 1}}
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \textcolor{comment}{/*\ You\ need\ to\ increase\ MEMP\_NUM\_SYS\_TIMEOUT\ by\ one\ if\ you\ use\ MQTT!}}
+\DoxyCodeLine{00102\ \textcolor{comment}{\ *\ see\ https://forums.raspberrypi.com/viewtopic.php?t=341914}}
+\DoxyCodeLine{00103\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#define\ MEMP\_NUM\_SYS\_TIMEOUT\ \ \ (LWIP\_NUM\_SYS\_TIMEOUT\_INTERNAL\ +\ 1)}}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#define\ MQTT\_REQ\_MAX\_IN\_FLIGHT\ \ (5)\ }\textcolor{comment}{/*\ maximum\ of\ subscribe\ requests\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{\#define\ DEFAULT\_UDP\_RECVMBOX\_SIZE\ \ \ \ \ TCPIP\_MBOX\_SIZE}}
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#define\ DEFAULT\_TCP\_RECVMBOX\_SIZE\ \ \ \ \ TCPIP\_MBOX\_SIZE}}
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#define\ DEFAULT\_ACCEPTMBOX\_SIZE\ \ \ \ \ \ \ TCPIP\_MBOX\_SIZE}}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \textcolor{comment}{/*\ MEMP\_NUM\_PBUF:\ the\ number\ of\ memp\ struct\ pbufs.\ If\ the\ application}}
+\DoxyCodeLine{00112\ \textcolor{comment}{\ \ \ sends\ a\ lot\ of\ data\ out\ of\ ROM\ (or\ other\ static\ memory),\ this}}
+\DoxyCodeLine{00113\ \textcolor{comment}{\ \ \ should\ be\ set\ high.\ */}}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#ifndef\ MEMP\_NUM\_PBUF}}
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\#define\ MEMP\_NUM\_PBUF\ 15}}
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00117\ \textcolor{comment}{/*\ MEMP\_NUM\_UDP\_PCB:\ the\ number\ of\ UDP\ protocol\ control\ blocks.\ One}}
+\DoxyCodeLine{00118\ \textcolor{comment}{\ \ \ per\ active\ UDP\ "{}connection"{}.\ */}}
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\#ifndef\ MEMP\_NUM\_UDP\_PCB}}
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\#define\ MEMP\_NUM\_UDP\_PCB\ 6}}
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00122\ \textcolor{comment}{/*\ MEMP\_NUM\_TCP\_PCB:\ the\ number\ of\ simulatenously\ active\ TCP}}
+\DoxyCodeLine{00123\ \textcolor{comment}{\ \ \ connections.\ */}}
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\#ifndef\ MEMP\_NUM\_TCP\_PCB}}
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\#define\ MEMP\_NUM\_TCP\_PCB\ 10}}
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00127\ \textcolor{comment}{/*\ MEMP\_NUM\_TCP\_PCB\_LISTEN:\ the\ number\ of\ listening\ TCP}}
+\DoxyCodeLine{00128\ \textcolor{comment}{\ \ \ connections.\ */}}
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\#ifndef\ MEMP\_NUM\_TCP\_PCB\_LISTEN}}
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\#define\ MEMP\_NUM\_TCP\_PCB\_LISTEN\ 6}}
+\DoxyCodeLine{00131\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00132\ \textcolor{comment}{/*\ MEMP\_NUM\_TCP\_SEG:\ the\ number\ of\ simultaneously\ queued\ TCP}}
+\DoxyCodeLine{00133\ \textcolor{comment}{\ \ \ segments.\ */}}
+\DoxyCodeLine{00134\ \textcolor{preprocessor}{\#ifndef\ MEMP\_NUM\_TCP\_SEG}}
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\#define\ MEMP\_NUM\_TCP\_SEG\ 22}}
+\DoxyCodeLine{00136\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00137\ \textcolor{comment}{/*\ MEMP\_NUM\_SYS\_TIMEOUT:\ the\ number\ of\ simulateously\ active}}
+\DoxyCodeLine{00138\ \textcolor{comment}{\ \ \ timeouts.\ */}}
+\DoxyCodeLine{00139\ \textcolor{preprocessor}{\#ifndef\ MEMP\_NUM\_SYS\_TIMEOUT}}
+\DoxyCodeLine{00140\ \textcolor{preprocessor}{\#define\ MEMP\_NUM\_SYS\_TIMEOUT\ 10}}
+\DoxyCodeLine{00141\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Pbuf\ options\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00144\ \textcolor{comment}{/*\ PBUF\_POOL\_SIZE:\ the\ number\ of\ buffers\ in\ the\ pbuf\ pool.\ */}}
+\DoxyCodeLine{00145\ \textcolor{preprocessor}{\#ifndef\ PBUF\_POOL\_SIZE}}
+\DoxyCodeLine{00146\ \textcolor{preprocessor}{\#define\ PBUF\_POOL\_SIZE\ 5}}
+\DoxyCodeLine{00147\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \textcolor{comment}{/*\ PBUF\_POOL\_BUFSIZE:\ the\ size\ of\ each\ pbuf\ in\ the\ pbuf\ pool.\ */}}
+\DoxyCodeLine{00150\ \textcolor{comment}{/*\ Default\ value\ is\ defined\ in\ lwip\(\backslash\)src\(\backslash\)include\(\backslash\)lwip\(\backslash\)opt.h\ as}}
+\DoxyCodeLine{00151\ \textcolor{comment}{\ *\ LWIP\_MEM\_ALIGN\_SIZE(TCP\_MSS+40+PBUF\_LINK\_ENCAPSULATION\_HLEN+PBUF\_LINK\_HLEN)*/}}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

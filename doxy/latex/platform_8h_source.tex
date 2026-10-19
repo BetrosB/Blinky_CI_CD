@@ -1,0 +1,47 @@
+\doxysection{platform.\+h}
+\hypertarget{platform_8h_source}{}\label{platform_8h_source}\index{C:/Users/ben/Dev/ZHAW/SoftwEng/TSM\_PicoW\_Blinky/src/platform.h@{C:/Users/ben/Dev/ZHAW/SoftwEng/TSM\_PicoW\_Blinky/src/platform.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2022-\/2025,\ Erich\ Styger}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ SPDX-\/License-\/Identifier:\ BSD-\/3-\/Clause}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ PLATFORM\_H\_}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ PLATFORM\_H\_}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00011\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ PL\_CONFIG\_USE\_PICO\_W\ \ \ \ \ \ \ \ \ \ \ \ (1)\ }\textcolor{comment}{/*\ if\ using\ Pico\ W\ board\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00015\ \ \ \textcolor{comment}{/*\ Note:}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ \ \ *\ if\ using\ Pico-\/W:}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ \ \ *\ a)\ enable\ 'library\ pico\_cyw43\_arch\_lwip\_sys\_freertos'\ in\ CMakeLists.txt\ of\ src\ folder}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ \ \ *\ b)\ Enable\ set(PICO\_BOARD\ pico\_w)\ in\ CMakeLists.txt\ in\ project\ root}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ \ \ */}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ PL\_CONFIG\_USE\_UNIT\_TESTS\ \ \ \ \ \ \ \ (1\ \&\&\ defined(ENABLE\_UNIT\_TESTS)\ \&\&\ ENABLE\_UNIT\_TESTS==1)\ }\textcolor{comment}{/*\ if\ using\ unit\ tests.\ ENABLE\_UNIT\_TESTS\ is\ set\ by\ the\ CMake\ file\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#if\ PL\_CONFIG\_USE\_UNIT\_TESTS\ \&\&\ !defined(UNITY\_OUTPUT\_CHAR)}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\ \ \ \#error\ "{}needs\ to\ be\ defined\ in\ IncludeMcuLibConfig.h!"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{comment}{/*\ platform\ configuration\ macros:\ set\ to\ 1\ to\ enable\ functionality\ */}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ PL\_CONFIG\_USE\_SHELL\ \ \ \ \ \ \ \ \ \ \ \ \ (0)}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ PL\_CONFIG\_USE\_LEDS\ \ \ \ \ \ \ \ \ \ \ \ \ \ (1)\ }\textcolor{comment}{/*\ if\ using\ LEDs\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ PL\_CONFIG\_USE\_TUD\_CDC\ \ \ \ \ \ \ \ \ \ \ (1)\ }\textcolor{comment}{/*\ tinyUSB\ CDC\ device\ with\ McuShellCdcDevice\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ PL\_CONFIG\_USE\_SHELL\_CDC\ \ \ \ \ \ \ \ \ (1\ \&\&\ PL\_CONFIG\_USE\_TUD\_CDC)\ }\textcolor{comment}{/*\ if\ using\ CDC\ as\ shell\ interface\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ PL\_CONFIG\_USE\_SEMIHOSTING\ \ \ \ \ \ \ (0)\ }\textcolor{comment}{/*\ if\ using\ semihosting\ for\ standard\ I/O.\ Note\ that\ SEGGER\ has\ issues\ with\ it?\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ PL\_CONFIG\_USE\_RTT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1)\ }\textcolor{comment}{/*\ if\ using\ SEGGER\ RTT\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ PL\_CONFIG\_USE\_SAMPLE\ \ \ \ \ \ \ \ \ \ \ \ (1)\ }\textcolor{comment}{/*\ sample\ example\ used\ for\ the\ scientific\ debugging\ part\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ PL\_CONFIG\_USE\_GCOV\ \ \ \ \ \ \ \ \ \ \ \ \ \ (0\ \&\&\ McuRdimon\_CONFIG\_IS\_ENABLED)\ }\textcolor{comment}{/*\ if\ using\ gcov\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00038\ \textcolor{keywordtype}{void}\ PL\_Init(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00041\ \}\ \ \textcolor{comment}{/*\ extern\ "{}C"{}\ */}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ PLATFORM\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}
